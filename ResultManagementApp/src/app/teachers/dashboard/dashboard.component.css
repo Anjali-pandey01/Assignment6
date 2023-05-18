@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+}
+
+.main-div {
+    margin-top: 5em;
+}
+
+.mat-column-action {
+    width: 15em !important;
+    text-align: center;
+}
+
+.mat-cell {
+    width: 20em;
+}
+
+.mat-header-cell {
+    color: black;
+    font-weight: blod;
+    font-size: 15px;
+}
+
+h2 {
+    margin: 0em;
+    padding: 1em 1em 1em 5em;
+    text-align: center;
+}

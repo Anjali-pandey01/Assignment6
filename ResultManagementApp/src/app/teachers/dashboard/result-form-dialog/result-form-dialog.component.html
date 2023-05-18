@@ -1,0 +1,74 @@
+<h1 mat-dialog-title align="center">{{data.title}}</h1>
+<form [formGroup]="resultForm" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content align="center">
+        <mat-form-field appearance="outline">
+            <mat-label>Roll No.</mat-label>
+            <input matInput formControlName="id" [type]="'number'"
+                (keydown)="resultFormError['idError'] = ''; (resultForm.controls['id'].value ? resultForm.controls['id'].setErrors(null) : '');">
+        </mat-form-field>
+        <div class="alert" align="start">
+            <span
+                *ngIf="resultForm.controls['id'].errors?.['required'] && (resultForm.controls['id'].touched || resultForm.controls['id'].dirty)">This
+                Field Cannot Be Empty!</span>
+            <span
+                *ngIf="resultForm.controls['id'].errors?.['pattern'] && (resultForm.controls['id'].touched || resultForm.controls['id'].dirty)">This
+                Field Only Contains Numbers!</span>
+            <span
+                *ngIf=" resultFormError['idError'] && (resultForm.controls['id'].touched || resultForm.controls['id'].dirty)">{{
+                resultFormError['idError'] }}</span>
+        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name"
+                (keydown)="resultFormError['nameError'] = ''; (resultForm.controls['name'].value ? resultForm.controls['name'].setErrors(null) : '');">
+
+        </mat-form-field>
+        <div class="alert" align="start">
+            <span
+                *ngIf="resultForm.controls['name'].errors?.['required'] && (resultForm.controls['name'].touched ||resultForm.controls['name'].dirty ) ">This
+                Field Cannot Be Empty!</span>
+            <span
+                *ngIf="resultForm.controls['name'].errors?.['pattern'] && (resultForm.controls['name'].touched ||resultForm.controls['name'].dirty ) ">This
+                Field Cannot Contains Numbers!</span>
+            <span
+                *ngIf=" resultFormError['nameError'] && (resultForm.controls['name'].touched || resultForm.controls['name'].dirty)">{{
+                resultFormError['nameError'] }}</span>
+        </div>
+        <mat-form-field appearance="outline" (click)="dp.open()">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput formControlName="dob" [matDatepicker]="dp" 
+                (keydown)="resultFormError['dobError'] = ''; (resultForm.controls['dob'].value ? resultForm.controls['dob'].setErrors(null) : '');">
+            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+            <mat-datepicker #dp disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <div class="alert" align="start">
+            <span
+                *ngIf="resultForm.controls['dob'].errors?.['required'] && (resultForm.controls['dob'].touched ||resultForm.controls['dob'].dirty ) ">This
+                Field Cannot Be Empty!</span>
+            <span
+                *ngIf=" resultFormError['dobError'] && (resultForm.controls['dob'].touched || resultForm.controls['dob'].dirty)">{{
+                resultFormError['dobError'] }}</span>
+        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>Score</mat-label>
+            <input matInput formControlName="score" [type]="'number'"
+                (keydown)="resultFormError['scoreError'] = ''; (resultForm.controls['score'].value ? resultForm.controls['score'].setErrors(null) : '');">
+
+        </mat-form-field>
+        <div class="alert" align="start">
+            <span
+                *ngIf="resultForm.controls['score'].errors?.['required'] && (resultForm.controls['score'].touched ||resultForm.controls['score'].dirty ) ">This
+                Field Cannot Be Empty!</span>
+            <span
+                *ngIf="resultForm.controls['score'].errors?.['pattern'] && (resultForm.controls['score'].touched ||resultForm.controls['score'].dirty ) ">This
+                Field Cannot Contains Numbers!</span>
+            <span
+                *ngIf=" resultFormError['scoreError'] && (resultForm.controls['score'].touched || resultForm.controls['score'].dirty)">{{
+                resultFormError['scoreError'] }}</span>
+        </div>
+    </div>
+    <div mat-dialog-actions align="center">
+        <button mat-raised-button color="primary">Submit</button>
+        <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    </div>
+</form>

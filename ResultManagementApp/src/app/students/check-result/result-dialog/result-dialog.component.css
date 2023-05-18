@@ -1,0 +1,15 @@
+th {
+    text-align: start;
+    padding-right: 5em;
+    padding-bottom: 2em;
+}
+
+td {
+    padding-bottom: 2em;
+}
+
+.mat-dialog-title{
+    border-bottom: 1px solid gray;
+    margin: 0em 0em 1em 0em;
+    padding: 0em 1em 1em 1em;
+}

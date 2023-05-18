@@ -1,0 +1,54 @@
+<div class="main-div" fxLayout="row wrap" fxLayoutAlign="center">
+    <div fxFlex="50" fxFlex.sm="100" fxFlex.xs="100">
+        <mat-card>
+            <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlexFill>
+                <div fxFlex="80">
+                    <!-- Card Title -->
+                    <mat-card-title align="center">Check Result</mat-card-title>
+                    <!-- Result Form-->
+                    <form [formGroup]="resultForm" (ngSubmit)="onSubmit()">
+                        <!-- Card Content -->
+                        <mat-card-content>
+                            <!-- Roll No. Field -->
+                            <mat-form-field appearance="outline">
+                                <mat-label>Roll No.</mat-label>
+                                <input matInput formControlName="rollNo" [type]="'number'"
+                                    placeholder="Enter Your Roll No."
+                                    (keydown)="resultError['rollNoError'] = ''; (resultForm.controls['rollNo'].value ? resultForm.controls['id'].setErrors(null) : '');">
+                            </mat-form-field>
+                            <!-- Roll No. Error Field -->
+                            <div>
+                                <span
+                                    *ngIf="resultForm.controls['rollNo'].errors?.['required'] && (resultForm.controls['rollNo'].touched || resultForm.controls['rollNo'].dirty)"
+                                    class="alert">This Field Cannot Be Empty!</span>
+                                <span
+                                    *ngIf=" resultError['rollNoError'] && (resultForm.controls['rollNo'].touched || resultForm.controls['rollNo'].dirty)"
+                                    class="alert">{{ resultError['rollNoError'] }}</span>
+                            </div>
+                            <!-- D.O.B. Field -->
+                            <mat-form-field appearance="outline" (click)="dp.open()">
+                                <mat-label>Date Of Birth</mat-label>
+                                <input matInput formControlName="dob" [matDatepicker]="dp"
+                                    (keydown)="resultError['dobError'] = ''; (resultForm.controls['dob'].value ? resultForm.controls['id'].setErrors(null) : '');">
+                                <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                                <mat-datepicker #dp disabled="false"></mat-datepicker>
+                            </mat-form-field>
+                            <!-- D.O.B. Error Field -->
+                            <div>
+                                <span
+                                    *ngIf="resultForm.controls['dob'].errors?.['required'] && (resultForm.controls['dob'].touched ||resultForm.controls['dob'].dirty ) "
+                                    class="alert">This Field Cannot Be Empty!</span>
+                                <span
+                                    *ngIf=" resultError['dobError'] && (resultForm.controls['dob'].touched || resultForm.controls['dob'].dirty)"
+                                    class="alert">{{ resultError['dobError'] }}</span>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions align="end">
+                            <button mat-raised-button color="primary">Submit</button>
+                        </mat-card-actions>
+                    </form>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

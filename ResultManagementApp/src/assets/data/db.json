@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "first_name": "Anjali",
+      "last_name": "Pandey",
+      "user_type": "teacher"
+    },
+    {
+      "id": 2,
+      "username": "Kshitij",
+      "password": "Kshitij@12345",
+      "first_name": "Kshitij",
+      "last_name": "Sharma",
+      "user_type": "student"
+    }
+  ],
+  "results": [
+    {
+      "name": "Anjali Pandey",
+      "dob": "03/01/1999",
+      "score": "89",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Prateek Sharma",
+      "dob": "11/05/1997",
+      "score": "95"
+    },
+    {
+      "id": "3",
+      "name": "Ayushi Rai",
+      "dob": "29/06/1997",
+      "score": "85"
+    },
+    {
+      "id": "4",
+      "name": "Nisha ",
+      "dob": "03/04/1999",
+      "score": "75"
+    },
+    {
+      "id": "5",
+      "name": "Sanjeev Paswan",
+      "dob": "21/08/1997",
+      "score": "87"
+    },
+    {
+      "id": "6",
+      "name": "Kshitij Sharma",
+      "dob": "31/01/1999",
+      "score": "89"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<h1 mat-dialog-title align="center">Result</h1>
+<div mat-dialog-content align="center">
+    <table>
+        <tbody>
+            <tr>
+                <th>Roll No.: </th>
+                <td>{{data['result'].id}}</td>
+            </tr>
+            <tr>
+                <th>Name: </th>
+                <td>{{data['result'].name}}</td>
+            </tr>
+            <tr>
+                <th>Date Of Birth: </th>
+                <td>{{data['result'].dob}}</td>
+            </tr>
+            <tr>
+                <th>Score: </th>
+                <td>{{data['result'].score}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-stroked-button color="accent" mat-dialog-close>Back</button>
+</div>

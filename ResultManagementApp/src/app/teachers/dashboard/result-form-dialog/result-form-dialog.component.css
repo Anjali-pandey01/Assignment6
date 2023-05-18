@@ -1,0 +1,32 @@
+
+
+.mat-dialog-title {
+    border-bottom: 1px solid gray;
+    margin: 0em 0em 1em 0em;
+    padding: 0em 1em 1em 1em;
+}
+
+.mat-form-field {
+    width: 80%;
+    margin-top: 1em;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    margin-bottom: 0em;
+    padding-bottom: 0em;
+}
+
+.alert {
+    color: red;
+    width: 80%;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}

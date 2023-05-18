@@ -1,0 +1,31 @@
+.mat-form-field {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.main-div {
+    margin-top: 5em;
+}
+
+.mat-card-content {
+    margin-top: 30px;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    margin-bottom: 0em;
+    padding-bottom: 0em;
+}
+
+.alert {
+    color: red;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
