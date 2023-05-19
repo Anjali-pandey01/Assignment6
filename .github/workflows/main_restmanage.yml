@@ -23,7 +23,8 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install -g npm@lts
+          npm install 
+          npm install express
           npm run build --if-present
           npm run test --if-present
       
